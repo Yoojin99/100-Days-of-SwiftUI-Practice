@@ -13,8 +13,22 @@ struct ContentView: View {
     /// View protocol의 유일한 requirement
     var body: some View {
         Form {
-            Text("Hello, world!")
-                .padding()
+            Group {
+                Text("Hello, world!")
+                Text("Hello, world!")
+                Text("Hello, world!")
+                Text("Hello, world!")
+                Text("Hello, world!")
+                Text("Hello, world!")
+            }
+            
+            Group {
+                Text("Hello, world!")
+                Text("Hello, world!")
+                Text("Hello, world!")
+                Text("Hello, world!")
+                Text("Hello, world!")
+            }
         }
     }
     
