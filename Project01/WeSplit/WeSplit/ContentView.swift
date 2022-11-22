@@ -10,16 +10,13 @@ import SwiftUI
 
 /// - description: SwiftUI의 View protocol 채택. View protocol은 화면에 무언가를 그리기 위해 꼭 채택해야 하는 기본 프로토콜이다. UIKit의 UIView와 같은 역할인듯.
 struct ContentView: View {
+    // struct의 한계를 극복하기 위한 방법. 값이 수정될 수 있는 영역에 SwiftUI를 사용해서 값을 저장할 수 있게 해준다.
+    @State var tapCount: Int = 0
+    
     /// View protocol의 유일한 requirement
     var body: some View {
-        NavigationView {
-            Form {
-                Section {
-                    Text("Hello, world!")
-                }
-            }
-            .navigationTitle("SwiftUI")
-            .navigationBarTitleDisplayMode(.inline)
+        Button("Tap Count: \(tapCount)") {
+            tapCount += 1
         }
     }
     
