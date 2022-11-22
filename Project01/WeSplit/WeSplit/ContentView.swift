@@ -12,13 +12,10 @@ import SwiftUI
 struct ContentView: View {
     /// View protocol의 유일한 requirement
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
+        Form {
             Text("Hello, world!")
+                .padding()
         }
-        .padding() // modifier. 기본 메서드지만, 기존 데이터 + 새로 수정된 내용을 포함한 새로운 뷰를 리턴한다. 따라서 여기에서는 padding이 적용된 Image, Text 뷰가 리턴되었다.
     }
     
     // body 외에도 다른 프로퍼티, 메서드를 추가할 수 있다.
