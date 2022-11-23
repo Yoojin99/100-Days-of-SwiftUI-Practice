@@ -17,24 +17,39 @@ struct ContentView: View {
     @State private var tipPercentage: Int = 20
     
     var body: some View {
-        Form {
-            Section {
-                if #available(iOS 16, *) {
-                    TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                        .keyboardType(.decimalPad)
-                } else {
-                    TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
-                        .keyboardType(.decimalPad)
+        NavigationView {
+            Form {
+                Section {
+                    if #available(iOS 16, *) {
+                        TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                            .keyboardType(.decimalPad)
+                        
+                        Picker("Number of people", selection: $numberOfPeople) {
+                            ForEach(2..<100) {
+                                Text("\($0) people")
+                            }
+                        }
+                    } else {
+                        TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+                            .keyboardType(.decimalPad)
+                        
+                        Picker("Number of people", selection: $numberOfPeople) {
+                            ForEach(2..<100) {
+                                Text("\($0) people")
+                            }
+                        }
+                    }
+                }
+                
+                Section {
+                    if #available(iOS 16, *) {
+                        Text(checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    } else {
+                        Text(checkAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+                    }
                 }
             }
-            
-            Section {
-                if #available(iOS 16, *) {
-                    Text(checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                } else {
-                    Text(checkAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
-                }
-            }
+            .navigationTitle("WeSplit")
         }
     }
     
