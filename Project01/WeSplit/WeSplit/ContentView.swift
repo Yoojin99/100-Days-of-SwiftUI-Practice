@@ -14,10 +14,9 @@ struct ContentView: View {
     
     var body: some View {
         Form {
-            // two-way binding
-            TextField("Enter your name", text: $name)
-            // two-way binding이 필요없다. 왜냐하면 text에서는 프로퍼티의 값을 읽기만 하면 되기 때문이다.
-            Text("Your name is \(name)")
+            ForEach(0..<100) { number in
+                Text("Row \(number)")
+            }
         }
     }
     
