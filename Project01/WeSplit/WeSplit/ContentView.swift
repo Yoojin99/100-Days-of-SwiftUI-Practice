@@ -17,8 +17,23 @@ struct ContentView: View {
     @State private var tipPercentage: Int = 20
     
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Form {
+            Section {
+                if #available(iOS 16, *) {
+                    TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                } else {
+                    TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+                }
+            }
+            
+            Section {
+                if #available(iOS 16, *) {
+                    Text(checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                } else {
+                    Text(checkAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+                }
+            }
+        }
     }
     
     // body 외에도 다른 프로퍼티, 메서드를 추가할 수 있다.
