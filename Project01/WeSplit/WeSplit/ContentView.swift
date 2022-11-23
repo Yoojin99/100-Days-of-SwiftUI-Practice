@@ -21,8 +21,10 @@ struct ContentView: View {
             Section {
                 if #available(iOS 16, *) {
                     TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                        .keyboardType(.decimalPad)
                 } else {
                     TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+                        .keyboardType(.decimalPad)
                 }
             }
             
