@@ -10,13 +10,14 @@ import SwiftUI
 
 /// - description: SwiftUI의 View protocol 채택. View protocol은 화면에 무언가를 그리기 위해 꼭 채택해야 하는 기본 프로토콜이다. UIKit의 UIView와 같은 역할인듯.
 struct ContentView: View {
-    // struct의 한계를 극복하기 위한 방법. 값이 수정될 수 있는 영역에 SwiftUI를 사용해서 값을 저장할 수 있게 해준다.
-    @State var tapCount: Int = 0
+    @State private var name: String = ""
     
-    /// View protocol의 유일한 requirement
     var body: some View {
-        Button("Tap Count: \(tapCount)") {
-            tapCount += 1
+        Form {
+            // two-way binding
+            TextField("Enter your name", text: $name)
+            // two-way binding이 필요없다. 왜냐하면 text에서는 프로퍼티의 값을 읽기만 하면 되기 때문이다.
+            Text("Your name is \(name)")
         }
     }
     
