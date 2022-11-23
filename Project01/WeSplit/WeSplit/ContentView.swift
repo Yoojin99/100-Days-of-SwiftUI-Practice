@@ -13,8 +13,18 @@ struct ContentView: View {
     private let tipPercentages: [Int] = [10, 15, 20, 25, 0]
     
     @State private var checkAmount: Double = 0.0
-    @State private var numberOfPeople: Int = 2
+    @State private var numberOfPeoplePickerIndex: Int = 2
     @State private var tipPercentage: Int = 20
+    
+    var totalPerPerson: Double {
+        // calculate the total per person
+        let numberOfPeople: Double = Double(numberOfPeoplePickerIndex) + 2
+        
+        let tipAmount: Double = checkAmount / 100 * Double(tipPercentage)
+        let grandTotal: Double = checkAmount + tipAmount
+        
+        return grandTotal / numberOfPeople
+    }
     
     var body: some View {
         NavigationView {
@@ -24,7 +34,7 @@ struct ContentView: View {
                         TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                             .keyboardType(.decimalPad)
                         
-                        Picker("Number of people", selection: $numberOfPeople) {
+                        Picker("Number of people", selection: $numberOfPeoplePickerIndex) {
                             ForEach(2..<100) {
                                 Text("\($0) people")
                             }
@@ -33,7 +43,7 @@ struct ContentView: View {
                         TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
                             .keyboardType(.decimalPad)
                         
-                        Picker("Number of people", selection: $numberOfPeople) {
+                        Picker("Number of people", selection: $numberOfPeoplePickerIndex) {
                             ForEach(2..<100) {
                                 Text("\($0) people")
                             }
@@ -54,9 +64,9 @@ struct ContentView: View {
                 
                 Section {
                     if #available(iOS 16, *) {
-                        Text(checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                        Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                     } else {
-                        Text(checkAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+                        Text(totalPerPerson, format: .currency(code: Locale.current.currencyCode ?? "USD"))
                     }
                 }
             }
