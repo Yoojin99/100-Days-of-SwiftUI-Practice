@@ -10,24 +10,9 @@ import SwiftUI
 
 /// - description: SwiftUI의 View protocol 채택. View protocol은 화면에 무언가를 그리기 위해 꼭 채택해야 하는 기본 프로토콜이다. UIKit의 UIView와 같은 역할인듯.
 struct ContentView: View {
-    // 학생들 이름
-    let studentNames: [String] = ["영희", "철수", "춘배"]
-    // 현재 선택된 학생 이름
-    @State private var selectedStudentName: String = "춘배"
-    
     var body: some View {
-        NavigationView {
-            Form {
-                // 사용자가 선택할 수 있게 하고, two-way binding을 써서 선택된 값을 화면에 보여주면서 선택된 값을 업데이트 한다.
-                Picker("Select your student", selection: $selectedStudentName) {
-                    // 모든 학생 이름을 반복해서 텍스트 뷰로 만든다.
-                    // id: \.self는 SwiftUI가 화면에 있는 모든 뷰들을 각기 다른 뷰로 식별해서 뭔가가 변할때 감지할 수 있게 하기 위해 사용한다.
-                    ForEach(studentNames, id: \.self) {
-                        Text($0)
-                    }
-                }
-            }
-        }
+        Text("Hello, world!")
+            .padding()
     }
     
     // body 외에도 다른 프로퍼티, 메서드를 추가할 수 있다.
