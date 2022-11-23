@@ -10,6 +10,12 @@ import SwiftUI
 
 /// - description: SwiftUI의 View protocol 채택. View protocol은 화면에 무언가를 그리기 위해 꼭 채택해야 하는 기본 프로토콜이다. UIKit의 UIView와 같은 역할인듯.
 struct ContentView: View {
+    private let tipPercentages: [Int] = [10, 15, 20, 25, 0]
+    
+    @State private var checkAmount: Double = 0.0
+    @State private var numberOfPeople: Int = 2
+    @State private var tipPercentage: Int = 20
+    
     var body: some View {
         Text("Hello, world!")
             .padding()
