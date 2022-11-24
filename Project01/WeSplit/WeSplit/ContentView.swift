@@ -16,6 +16,8 @@ struct ContentView: View {
     @State private var numberOfPeoplePickerIndex: Int = 2
     @State private var tipPercentage: Int = 20
     
+    @FocusState private var amountIsFocused: Bool
+    
     var totalPerPerson: Double {
         // calculate the total per person
         let numberOfPeople: Double = Double(numberOfPeoplePickerIndex) + 2
@@ -33,6 +35,7 @@ struct ContentView: View {
                     if #available(iOS 16, *) {
                         TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                             .keyboardType(.decimalPad)
+                            .focused($amountIsFocused)
                         
                         Picker("Number of people", selection: $numberOfPeoplePickerIndex) {
                             ForEach(2..<100) {
@@ -42,6 +45,8 @@ struct ContentView: View {
                     } else {
                         TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
                             .keyboardType(.decimalPad)
+                            .focused($amountIsFocused)
+
                         
                         Picker("Number of people", selection: $numberOfPeoplePickerIndex) {
                             ForEach(2..<100) {
@@ -71,6 +76,19 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("WeSplit")
+            // view를 위한 toolbar item을 명시할 수 있게 한다. 이 아이템은 화면 여러 곳에 나타날 수 있다. (상단의 Navigation bar, 하단의 toolbar 영역 등)
+            .toolbar {
+                // 특정 영역에 하나 이상의 버튼을 보여줄 수 있게 한다. 여기서 toolbar는 키보드에 붙여져 있는 영역이어서 키보드와 함께 나타났다가 사라진다.
+                ToolbarItemGroup(placement: .keyboard) {
+                    // 유동적인 여백 공간으로 spacer를 두면 다른 뷰들을 한 쪽으로 밀어버린다.
+                    // 여기에서는 toolbar의 첫 번째로 spacer를 뒀기 때문에 Done 버튼이 오른쪽으로 밀리게 된다.
+                    Spacer()
+                    
+                    Button("Done") {
+                        amountIsFocused = false
+                    }
+                }
+            }
         }
     }
     
