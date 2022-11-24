@@ -30,30 +30,25 @@ struct ContentView: View {
         return totalAmount / numberOfPeople
     }
     
+    private let currencyFormat: FloatingPointFormatStyle<Double>.Currency = {
+        if #available(iOS 16, *) {
+            return .currency(code: Locale.current.currency?.identifier ?? "USD")
+        }
+        
+        return .currency(code: Locale.current.currencyCode ?? "USD")
+    }()
+    
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    if #available(iOS 16, *) {
-                        TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                            .keyboardType(.decimalPad)
-                            .focused($amountIsFocused)
-                        
-                        Picker("Number of people", selection: $numberOfPeoplePickerIndex) {
-                            ForEach(2..<100) {
-                                Text("\($0) people")
-                            }
-                        }
-                    } else {
-                        TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
-                            .keyboardType(.decimalPad)
-                            .focused($amountIsFocused)
-
-                        
-                        Picker("Number of people", selection: $numberOfPeoplePickerIndex) {
-                            ForEach(2..<100) {
-                                Text("\($0) people")
-                            }
+                    TextField("Amount", value: $checkAmount, format: currencyFormat)
+                        .keyboardType(.decimalPad)
+                        .focused($amountIsFocused)
+                    
+                    Picker("Number of people", selection: $numberOfPeoplePickerIndex) {
+                        ForEach(2..<100) {
+                            Text("\($0) people")
                         }
                     }
                 }
@@ -69,21 +64,13 @@ struct ContentView: View {
                 }
                 
                 Section {
-                    if #available(iOS 16, *) {
-                        Text(totalAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                    } else {
-                        Text(totalAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
-                    }
+                    Text(totalAmount, format: currencyFormat)
                 } header: {
                     Text("Total amount for check")
                 }
                 
                 Section {
-                    if #available(iOS 16, *) {
-                        Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                    } else {
-                        Text(totalPerPerson, format: .currency(code: Locale.current.currencyCode ?? "USD"))
-                    }
+                    Text(totalPerPerson, format: currencyFormat)
                 } header: {
                     Text("Amount per person")
                 }
