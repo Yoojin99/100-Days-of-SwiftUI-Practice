@@ -73,6 +73,8 @@ struct ContentView: View {
                     } else {
                         Text(totalPerPerson, format: .currency(code: Locale.current.currencyCode ?? "USD"))
                     }
+                } header: {
+                    Text("Amount per person")
                 }
             }
             .navigationTitle("WeSplit")
