@@ -18,14 +18,18 @@ struct ContentView: View {
     
     @FocusState private var amountIsFocused: Bool
     
-    var totalPerPerson: Double {
-        // calculate the total per person
-        let numberOfPeople: Double = Double(numberOfPeoplePickerIndex) + 2
-        
+    private var numberOfPeople: Double {
+        return Double(numberOfPeoplePickerIndex) + 2
+    }
+    
+    private var totalAmount: Double {
         let tipAmount: Double = checkAmount / 100 * Double(tipPercentage)
-        let grandTotal: Double = checkAmount + tipAmount
         
-        return grandTotal / numberOfPeople
+        return checkAmount + tipAmount
+    }
+    
+    private var totalPerPerson: Double {
+        return totalAmount / numberOfPeople
     }
     
     var body: some View {
@@ -65,6 +69,16 @@ struct ContentView: View {
                     .pickerStyle(.segmented)
                 } header: {
                     Text("How much tip do you want to leave?")
+                }
+                
+                Section {
+                    if #available(iOS 16, *) {
+                        Text(totalAmount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    } else {
+                        Text(totalAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+                    }
+                } header: {
+                    Text("Total amount for check")
                 }
                 
                 Section {
