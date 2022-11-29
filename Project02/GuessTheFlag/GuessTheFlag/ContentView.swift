@@ -13,12 +13,10 @@ struct ContentView: View {
         VStack {
             Button("Button 1") { }
                 .buttonStyle(.bordered)
-            Button("Button 2", role: .destructive) { }
-                .buttonStyle(.bordered)
-            Button("Button 3") { }
+                .tint(.mint)
+            Button("Button 2") { }
                 .buttonStyle(.borderedProminent)
-            Button("Button 4", role: .destructive) { }
-                .buttonStyle(.borderedProminent)
+                .tint(.mint)
         }
     }
     
