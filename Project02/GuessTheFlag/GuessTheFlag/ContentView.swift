@@ -25,8 +25,10 @@ struct ContentView: View {
                 // 내부의 VStack은 spacing이 없다.
                 VStack {
                     Text("Tap the flag of")
+                        .font(.subheadline.weight(.heavy))
                         .foregroundColor(.white)
                     Text(countries[correctAnswer])
+                        .font(.largeTitle.weight(.semibold))
                         .foregroundColor(.white)
                 }
                 
