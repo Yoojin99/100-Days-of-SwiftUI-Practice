@@ -10,13 +10,13 @@ import SwiftUI
 struct ContentView: View {
     // 화면에 출력할 수 있는 어떤 view를 받기를 기대한다. navigation view, form, text view 등등. View 프로토콜을 충족하기만 하면 됨
     var body: some View {
-        VStack {
-            Button("Button 1") { }
-                .buttonStyle(.bordered)
-                .tint(.mint)
-            Button("Button 2") { }
-                .buttonStyle(.borderedProminent)
-                .tint(.mint)
+        Button {
+            print("Button was tapped")
+        } label: {
+            Text("Tap me!")
+                .padding()
+                .foregroundColor(.white)
+                .background(.red)
         }
     }
     
