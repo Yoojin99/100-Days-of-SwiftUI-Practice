@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    // 화면에 출력할 수 있는 어떤 view를 받기를 기대한다. navigation view, form, text view 등등. View 프로토콜을 충족하기만 하면 됨
+    
+    @State private var showingAlert: Bool = false
+    
     var body: some View {
-        Button {
-            print("Edit button was tapped!")
-        } label: {
-            Label("Edit", systemImage: "pencil")
+        Button("Show Alert") {
+            showingAlert = true
+        }
+        .alert("Important message", isPresented: $showingAlert) {
+            Button("OK") {}
         }
     }
     
