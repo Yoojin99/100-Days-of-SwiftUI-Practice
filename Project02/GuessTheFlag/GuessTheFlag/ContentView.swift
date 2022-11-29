@@ -22,7 +22,9 @@ struct ContentView: View {
                 // 내부의 VStack은 spacing이 없다.
                 VStack {
                     Text("Tap the flag of")
+                        .foregroundColor(.white)
                     Text(countries[correctAnswer])
+                        .foregroundColor(.white)
                 }
                 
                 ForEach(0..<3) { number in
