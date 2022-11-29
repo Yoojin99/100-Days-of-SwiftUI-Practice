@@ -13,13 +13,9 @@ struct ContentView: View {
     var correctAnswer = Int.random(in: 0...2)
 
     var body: some View {
-        Button("Show Alert") {
-            showingAlert = true
-        }
-        .alert("Important message", isPresented: $showingAlert) {
-            Button("OK", role: .cancel) {}
-        } message: {
-            Text("Please read this.")
+        VStack {
+            Text("Tap the flag of")
+            Text(countries[correctAnswer])
         }
     }
     
