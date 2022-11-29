@@ -17,7 +17,7 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            Color.blue
+            LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             
             // 바깥의 VStack은 spacing이 30있지만
