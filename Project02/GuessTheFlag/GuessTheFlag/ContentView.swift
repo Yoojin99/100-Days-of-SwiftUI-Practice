@@ -24,6 +24,8 @@ struct ContentView: View {
             .ignoresSafeArea()
             
             VStack {
+                Spacer()
+                
                 Text("Guess the Flag")
                     .font(.largeTitle.bold())
                     .foregroundColor(.white)
@@ -34,10 +36,9 @@ struct ContentView: View {
                     VStack {
                         Text("Tap the flag of")
                             .font(.subheadline.weight(.heavy))
-                            .foregroundColor(.white)
+                            .foregroundStyle(.secondary)
                         Text(countries[correctAnswer])
                             .font(.largeTitle.weight(.semibold))
-                            .foregroundColor(.white)
                     }
                     
                     ForEach(0..<3) { number in
@@ -63,10 +64,16 @@ struct ContentView: View {
                     Text("Your score is ???")
                 }
                 
+                Spacer()
+                Spacer()
+                
                 Text("Score: ???")
                     .foregroundColor(.white)
                     .font(.title.bold())
+                
+                Spacer()
             }
+            .padding()
         }
     }
     
