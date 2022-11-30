@@ -23,40 +23,50 @@ struct ContentView: View {
             ], center: .top, startRadius: 200, endRadius: 700)
             .ignoresSafeArea()
             
-            // 바깥의 VStack은 spacing이 30있지만
-            VStack(spacing: 15) {
-                // 내부의 VStack은 spacing이 없다.
-                VStack {
-                    Text("Tap the flag of")
-                        .font(.subheadline.weight(.heavy))
-                        .foregroundColor(.white)
-                    Text(countries[correctAnswer])
-                        .font(.largeTitle.weight(.semibold))
-                        .foregroundColor(.white)
-                }
+            VStack {
+                Text("Guess the Flag")
+                    .font(.largeTitle.bold())
+                    .foregroundColor(.white)
                 
-                ForEach(0..<3) { number in
-                    Button {
-                        flagTapped(number)
-                    } label: {
-                        Image(countries[number])
-                            .renderingMode(.original)
-                            .clipShape(Capsule())
-                            .shadow(radius: 5)
+                // 바깥의 VStack은 spacing이 30있지만
+                VStack(spacing: 15) {
+                    // 내부의 VStack은 spacing이 없다.
+                    VStack {
+                        Text("Tap the flag of")
+                            .font(.subheadline.weight(.heavy))
+                            .foregroundColor(.white)
+                        Text(countries[correctAnswer])
+                            .font(.largeTitle.weight(.semibold))
+                            .foregroundColor(.white)
+                    }
+                    
+                    ForEach(0..<3) { number in
+                        Button {
+                            flagTapped(number)
+                        } label: {
+                            Image(countries[number])
+                                .renderingMode(.original)
+                                .clipShape(Capsule())
+                                .shadow(radius: 5)
+                        }
                     }
                 }
+                // take all horizontal space it needs
+                .frame(maxWidth: .infinity)
+                // adds vertical padding
+                .padding(.vertical, 20)
+                .background(.regularMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .alert(scoreTitle, isPresented: $showingScore) {
+                    Button("Continue", action: askQuestion)
+                } message: {
+                    Text("Your score is ???")
+                }
+                
+                Text("Score: ???")
+                    .foregroundColor(.white)
+                    .font(.title.bold())
             }
-        }
-        // take all horizontal space it needs
-        .frame(maxWidth: .infinity)
-        // adds vertical padding
-        .padding(.vertical, 20)
-        .background(.regularMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 20))
-        .alert(scoreTitle, isPresented: $showingScore) {
-            Button("Continue", action: askQuestion)
-        } message: {
-            Text("Your score is ???")
         }
     }
     
