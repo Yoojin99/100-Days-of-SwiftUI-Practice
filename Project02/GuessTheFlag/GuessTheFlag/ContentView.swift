@@ -24,7 +24,7 @@ struct ContentView: View {
             .ignoresSafeArea()
             
             // 바깥의 VStack은 spacing이 30있지만
-            VStack(spacing: 30) {
+            VStack(spacing: 15) {
                 // 내부의 VStack은 spacing이 없다.
                 VStack {
                     Text("Tap the flag of")
@@ -47,6 +47,12 @@ struct ContentView: View {
                 }
             }
         }
+        // take all horizontal space it needs
+        .frame(maxWidth: .infinity)
+        // adds vertical padding
+        .padding(.vertical, 20)
+        .background(.regularMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
         .alert(scoreTitle, isPresented: $showingScore) {
             Button("Continue", action: askQuestion)
         } message: {
