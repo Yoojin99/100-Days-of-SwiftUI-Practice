@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var useRedText: Bool = false
+    
     var body: some View {
-        Button("tap me") {
-            print(type(of: self.body))
+        Button("Hello World") {
+            useRedText.toggle()
         }
-        
-        Button("another button") {
-            
-        }
+        .foregroundColor(useRedText ? .red : .blue)
     }
 }
 
