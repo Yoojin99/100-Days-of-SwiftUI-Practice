@@ -9,23 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(spacing: 10) {
-            CapsuleText(text: "First")
-            CapsuleText(text: "Second")
-        }
+        Text("Hello World")
+            .modifier(Title())
     }
 }
 
-struct CapsuleText: View {
-    var text: String
-    
-    var body: some View {
-        Text(text)
+struct Title: ViewModifier {
+    func body(content: Content) -> some View {
+        content
             .font(.largeTitle)
-            .padding()
             .foregroundColor(.white)
+            .padding()
             .background(.blue)
-            .clipShape(Capsule())
+            .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
 
