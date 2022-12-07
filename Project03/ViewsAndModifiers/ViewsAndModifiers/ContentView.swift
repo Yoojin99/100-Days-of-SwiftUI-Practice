@@ -8,17 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var useRedText: Bool = false
+    let text1 = Text("Hi")
+    let text2 = Text("There")
     
     var body: some View {
         VStack {
-            Text("Gryffindor")
-                .blur(radius: 0)
-            Text("Hufflepuff")
-            Text("Ravenclaw")
-            Text("Slytherin")
+            text1
+            text2
         }
-        .blur(radius: 5)
     }
 }
 
