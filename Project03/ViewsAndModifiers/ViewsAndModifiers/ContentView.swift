@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    var body: some View {
-        Text("Hello World")
-            .modifier(Title())
-    }
-}
-
 struct Title: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -22,6 +15,19 @@ struct Title: ViewModifier {
             .padding()
             .background(.blue)
             .clipShape(RoundedRectangle(cornerRadius: 10))
+    }
+}
+
+extension View {
+    func titleStyle() -> some View {
+        modifier(Title())
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        Text("Hello World")
+            .titleStyle()
     }
 }
 
