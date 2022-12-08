@@ -11,7 +11,18 @@
 		D9B1B88E2941B84A00B5ADD1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1B88D2941B84A00B5ADD1 /* ContentView.swift */; };
 		D9B1B8902941B84D00B5ADD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9B1B88F2941B84D00B5ADD1 /* Assets.xcassets */; };
 		D9B1B8932941B84D00B5ADD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9B1B8922941B84D00B5ADD1 /* Preview Assets.xcassets */; };
+		D9B1B8A02941C01200B5ADD1 /* GameManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1B89F2941C01200B5ADD1 /* GameManagerTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D9B1B8A12941C01200B5ADD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9B1B8802941B84A00B5ADD1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D9B1B8872941B84A00B5ADD1;
+			remoteInfo = MileStone1_RockPaperScissors;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D9B1B8882941B84A00B5ADD1 /* MileStone1_RockPaperScissors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MileStone1_RockPaperScissors.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,10 +30,19 @@
 		D9B1B88D2941B84A00B5ADD1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D9B1B88F2941B84D00B5ADD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9B1B8922941B84D00B5ADD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D9B1B89D2941C01200B5ADD1 /* MileStone1_RockPaperScissorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MileStone1_RockPaperScissorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9B1B89F2941C01200B5ADD1 /* GameManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D9B1B8852941B84A00B5ADD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9B1B89A2941C01200B5ADD1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				D9B1B88A2941B84A00B5ADD1 /* MileStone1_RockPaperScissors */,
+				D9B1B89E2941C01200B5ADD1 /* MileStone1_RockPaperScissorsTests */,
 				D9B1B8892941B84A00B5ADD1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				D9B1B8882941B84A00B5ADD1 /* MileStone1_RockPaperScissors.app */,
+				D9B1B89D2941C01200B5ADD1 /* MileStone1_RockPaperScissorsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +89,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D9B1B89E2941C01200B5ADD1 /* MileStone1_RockPaperScissorsTests */ = {
+			isa = PBXGroup;
+			children = (
+				D9B1B89F2941C01200B5ADD1 /* GameManagerTests.swift */,
+			);
+			path = MileStone1_RockPaperScissorsTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -87,6 +117,24 @@
 			productReference = D9B1B8882941B84A00B5ADD1 /* MileStone1_RockPaperScissors.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D9B1B89C2941C01200B5ADD1 /* MileStone1_RockPaperScissorsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9B1B8A32941C01200B5ADD1 /* Build configuration list for PBXNativeTarget "MileStone1_RockPaperScissorsTests" */;
+			buildPhases = (
+				D9B1B8992941C01200B5ADD1 /* Sources */,
+				D9B1B89A2941C01200B5ADD1 /* Frameworks */,
+				D9B1B89B2941C01200B5ADD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9B1B8A22941C01200B5ADD1 /* PBXTargetDependency */,
+			);
+			name = MileStone1_RockPaperScissorsTests;
+			productName = MileStone1_RockPaperScissorsTests;
+			productReference = D9B1B89D2941C01200B5ADD1 /* MileStone1_RockPaperScissorsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +147,10 @@
 				TargetAttributes = {
 					D9B1B8872941B84A00B5ADD1 = {
 						CreatedOnToolsVersion = 14.1;
+					};
+					D9B1B89C2941C01200B5ADD1 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = D9B1B8872941B84A00B5ADD1;
 					};
 				};
 			};
@@ -116,6 +168,7 @@
 			projectRoot = "";
 			targets = (
 				D9B1B8872941B84A00B5ADD1 /* MileStone1_RockPaperScissors */,
+				D9B1B89C2941C01200B5ADD1 /* MileStone1_RockPaperScissorsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -127,6 +180,13 @@
 			files = (
 				D9B1B8932941B84D00B5ADD1 /* Preview Assets.xcassets in Resources */,
 				D9B1B8902941B84D00B5ADD1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9B1B89B2941C01200B5ADD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +202,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D9B1B8992941C01200B5ADD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9B1B8A02941C01200B5ADD1 /* GameManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D9B1B8A22941C01200B5ADD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D9B1B8872941B84A00B5ADD1 /* MileStone1_RockPaperScissors */;
+			targetProxy = D9B1B8A12941C01200B5ADD1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D9B1B8942941B84D00B5ADD1 /* Debug */ = {
@@ -317,6 +393,50 @@
 			};
 			name = Release;
 		};
+		D9B1B8A42941C01200B5ADD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LMN27T889C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "y00jin.MileStone1-RockPaperScissorsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MileStone1_RockPaperScissors.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MileStone1_RockPaperScissors";
+			};
+			name = Debug;
+		};
+		D9B1B8A52941C01200B5ADD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LMN27T889C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "y00jin.MileStone1-RockPaperScissorsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MileStone1_RockPaperScissors.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MileStone1_RockPaperScissors";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -334,6 +454,15 @@
 			buildConfigurations = (
 				D9B1B8972941B84D00B5ADD1 /* Debug */,
 				D9B1B8982941B84D00B5ADD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9B1B8A32941C01200B5ADD1 /* Build configuration list for PBXNativeTarget "MileStone1_RockPaperScissorsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9B1B8A42941C01200B5ADD1 /* Debug */,
+				D9B1B8A52941C01200B5ADD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
