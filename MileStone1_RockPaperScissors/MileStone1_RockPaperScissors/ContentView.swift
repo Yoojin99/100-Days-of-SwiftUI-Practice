@@ -7,7 +7,14 @@
 
 import SwiftUI
 
+enum RPS {
+    case rock, paper, scissor
+}
+
 struct ContentView: View {
+    @State private var systemChoice: RPS = .rock
+    @State private var playerChoice: RPS = .rock
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
