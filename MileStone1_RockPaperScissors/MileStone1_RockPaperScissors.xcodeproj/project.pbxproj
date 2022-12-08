@@ -12,6 +12,8 @@
 		D9B1B8902941B84D00B5ADD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9B1B88F2941B84D00B5ADD1 /* Assets.xcassets */; };
 		D9B1B8932941B84D00B5ADD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9B1B8922941B84D00B5ADD1 /* Preview Assets.xcassets */; };
 		D9B1B8A02941C01200B5ADD1 /* GameManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1B89F2941C01200B5ADD1 /* GameManagerTests.swift */; };
+		D9B1B8A82941C16F00B5ADD1 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1B8A72941C16F00B5ADD1 /* GameManager.swift */; };
+		D9B1B8AA2941C1AD00B5ADD1 /* RockPaperScissorsGameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B1B8A92941C1AD00B5ADD1 /* RockPaperScissorsGameManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,8 @@
 		D9B1B8922941B84D00B5ADD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D9B1B89D2941C01200B5ADD1 /* MileStone1_RockPaperScissorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MileStone1_RockPaperScissorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9B1B89F2941C01200B5ADD1 /* GameManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManagerTests.swift; sourceTree = "<group>"; };
+		D9B1B8A72941C16F00B5ADD1 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		D9B1B8A92941C1AD00B5ADD1 /* RockPaperScissorsGameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockPaperScissorsGameManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 		D9B1B88A2941B84A00B5ADD1 /* MileStone1_RockPaperScissors */ = {
 			isa = PBXGroup;
 			children = (
+				D9B1B8A62941C16000B5ADD1 /* GameManager */,
 				D9B1B88B2941B84A00B5ADD1 /* MileStone1_RockPaperScissorsApp.swift */,
 				D9B1B88D2941B84A00B5ADD1 /* ContentView.swift */,
 				D9B1B88F2941B84D00B5ADD1 /* Assets.xcassets */,
@@ -95,6 +100,15 @@
 				D9B1B89F2941C01200B5ADD1 /* GameManagerTests.swift */,
 			);
 			path = MileStone1_RockPaperScissorsTests;
+			sourceTree = "<group>";
+		};
+		D9B1B8A62941C16000B5ADD1 /* GameManager */ = {
+			isa = PBXGroup;
+			children = (
+				D9B1B8A72941C16F00B5ADD1 /* GameManager.swift */,
+				D9B1B8A92941C1AD00B5ADD1 /* RockPaperScissorsGameManager.swift */,
+			);
+			path = GameManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +212,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9B1B88E2941B84A00B5ADD1 /* ContentView.swift in Sources */,
+				D9B1B8A82941C16F00B5ADD1 /* GameManager.swift in Sources */,
+				D9B1B8AA2941C1AD00B5ADD1 /* RockPaperScissorsGameManager.swift in Sources */,
 				D9B1B88C2941B84A00B5ADD1 /* MileStone1_RockPaperScissorsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
