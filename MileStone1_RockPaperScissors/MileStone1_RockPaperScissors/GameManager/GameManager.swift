@@ -8,5 +8,16 @@
 import Foundation
 
 protocol GameManager {
+    /// user score
+    var score: Int { get set }
+    /// count of how many turns did user played game
+    var steps: Int { get set }
     
+    func playSystemTurn()
+    
+    func userLose()
+    func userWon()
+    
+    func finishTurn()
+    func reset()
 }
