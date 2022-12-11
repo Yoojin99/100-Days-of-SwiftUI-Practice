@@ -7,13 +7,8 @@
 
 import SwiftUI
 
-enum RPS {
-    case rock, paper, scissor
-}
-
 struct ContentView: View {
-    @State private var systemChoice: RPS = .rock
-    @State private var playerChoice: RPS = .rock
+    let gameManager: GameManager
     
     var body: some View {
         VStack {
@@ -28,6 +23,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let gameManager: GameManager = RockPaperScissorsGameManager()
+        return ContentView(gameManager: gameManager)
     }
 }

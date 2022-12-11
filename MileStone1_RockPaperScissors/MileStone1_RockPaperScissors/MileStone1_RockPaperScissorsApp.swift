@@ -11,7 +11,7 @@ import SwiftUI
 struct MileStone1_RockPaperScissorsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(gameManager: RockPaperScissorsGameManager())
         }
     }
 }
