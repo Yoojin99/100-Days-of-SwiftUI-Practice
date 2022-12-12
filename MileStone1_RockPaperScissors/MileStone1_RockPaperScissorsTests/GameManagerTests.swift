@@ -10,7 +10,7 @@ import XCTest
 
 final class GameManagerTests: XCTestCase {
     
-    var gameManager: GameManager!
+    var gameManager: (any GameManager)!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -29,7 +29,6 @@ final class GameManagerTests: XCTestCase {
         
         gameManager.playSystemTurn()
         gameManager.userWon()
-        gameManager.finishTurn()
         
         XCTAssertEqual(currentScore + 1, gameManager.score)
     }
@@ -39,7 +38,6 @@ final class GameManagerTests: XCTestCase {
         
         gameManager.playSystemTurn()
         gameManager.userLose()
-        gameManager.finishTurn()
         
         XCTAssertEqual(currentScore, gameManager.score)
     }
@@ -53,6 +51,7 @@ final class GameManagerTests: XCTestCase {
             gameManager.userWon()
             gameManager.finishTurn()
         }
+        gameManager.reset()
         
         XCTAssertEqual(gameManager.steps, 0)
         XCTAssertEqual(gameManager.score, 0)
@@ -61,7 +60,9 @@ final class GameManagerTests: XCTestCase {
         for _ in stride(from: 0, to: 10, by: 1) {
             gameManager.playSystemTurn()
             gameManager.userLose()
+            gameManager.finishTurn()
         }
+        gameManager.reset()
         
         XCTAssertEqual(gameManager.steps, 0)
         XCTAssertEqual(gameManager.score, 0)
